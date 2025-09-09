@@ -1,0 +1,392 @@
+:root {
+    --bg: #0b0b0c;
+    --fg: #f3f4f6;
+    --muted: #a3a3a3;
+    --card: #121214;
+    --border: #262626;
+    --accent: #4f46e5;
+    --chip: #1f1f22;
+    --shadow: 0 8px 24px rgba(0, 0, 0, .35);
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --bg: #fafafa;
+        --fg: #0a0a0a;
+        --muted: #525252;
+        --card: #fff;
+        --border: #e5e5e5;
+        --chip: #f4f4f5;
+        --shadow: 0 10px 30px rgba(0, 0, 0, .06);
+    }
+}
+
+body {
+    margin: 0;
+    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial;
+    background: var(--bg);
+    color: var(--fg);
+}
+
+.light {
+    --bg: #ffffff;
+    --fg: #0a0a0a;
+    --muted: #525252;
+    --card: #ffffff;
+    --border: #e5e5e5;
+    --chip: #f4f4f5;
+    --shadow: 0 10px 30px rgba(0, 0, 0, .06);
+}
+
+.dark {
+    --bg: #0b0b0c;
+    --fg: #f3f4f6;
+    --muted: #a3a3a3;
+    --card: #121214;
+    --border: #262626;
+    --chip: #1f1f22;
+    --shadow: 0 8px 24px rgba(0, 0, 0, .35);
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    backdrop-filter: saturate(1.2) blur(8px);
+    border-bottom: 1px solid var(--border);
+    background: color-mix(in oklab, var(--bg) 70%, transparent);
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 12px 20px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #111, #333);
+    display: grid;
+    place-items: center;
+    font-weight: 800
+}
+
+.sub {
+    color: var(--muted);
+    font-size: .95rem
+}
+
+.btn {
+    appearance: none;
+    border: 1px solid var(--border);
+    background: var(--card);
+    color: var(--fg);
+    padding: 10px 14px;
+    border-radius: 14px;
+    cursor: pointer;
+    font-weight: 600
+}
+
+.btn.primary {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: white
+}
+
+.btn.ghost {
+    background: transparent
+}
+
+.btn:active {
+    transform: translateY(1px)
+}
+
+.grid {
+    display: block;
+    gap: 20px;
+    justify-content: center;
+}
+
+@media(min-width:900px) {
+    .grid {
+        grid-template-columns: 2fr 1fr
+    }
+}
+
+.card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    box-shadow: var(--shadow)
+}
+
+.p {
+    padding: 22px
+}
+
+.title {
+    font-size: 1.4rem;
+    margin: 0
+}
+
+.title-xl {
+    font-size: 2rem;
+    margin: 0
+}
+
+.text-lg {
+    font-size: 1.1rem
+}
+
+.muted {
+    color: var(--muted)
+}
+
+.cta-row {
+    display: flex;
+    gap: 10px;
+    margin-top: 16px;
+    flex-wrap: wrap
+}
+
+.tools {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center
+}
+
+.input {
+    flex: 1;
+    min-width: 240px;
+    position: relative
+}
+
+.input input {
+    width: 90%;
+    padding: 12px 40px 12px 12px;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    background: var(--chip);
+    color: var(--fg)
+}
+
+.input svg {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: .6
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px
+}
+
+.tag {
+    border: 1px solid var(--border);
+    padding: 8px 12px;
+    border-radius: 999px;
+    background: var(--chip);
+    cursor: pointer;
+    font-size: .9rem
+}
+
+.tag.active {
+    background: var(--fg);
+    color: var(--bg)
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 18px;
+    margin-top: 14px
+}
+
+.project {
+    overflow: hidden;
+    transition: transform .2s ease;
+}
+
+.project:has(.actions a:hover) {
+    transform: translateY(-2px);
+}
+
+/* :has() chulo */
+.thumb {
+    aspect-ratio: 16/9;
+    background: #0f0f10;
+    border-bottom: 1px solid var(--border)
+}
+
+.thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block
+}
+
+.stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 8px
+}
+
+.chip {
+    background: var(--chip);
+    border: 1px solid var(--border);
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-size: .75rem
+}
+
+.actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px
+}
+
+.skills .chip {
+  flex: 1 1 auto;       /* se adaptan al ancho disponible */
+  min-width: 90px;      /* mínimo por chip */
+  text-align: center;
+}
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+
+footer {
+    color: var(--muted);
+    font-size: .9rem;
+    padding: 30px 0
+}
+
+.switch {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border: 1px solid var(--border);
+    padding: 8px 12px;
+    border-radius: 14px
+}
+
+.wave {
+    display: inline-block;
+    animation: wave 2.2s infinite ease-in-out;
+    transform-origin: 70% 70%
+}
+
+@keyframes wave {
+    0% {
+        transform: rotate(0)
+    }
+
+    10% {
+        transform: rotate(14deg)
+    }
+
+    20% {
+        transform: rotate(-8deg)
+    }
+
+    30% {
+        transform: rotate(14deg)
+    }
+
+    40% {
+        transform: rotate(-4deg)
+    }
+
+    50% {
+        transform: rotate(10deg)
+    }
+
+    60%,
+    100% {
+        transform: rotate(0)
+    }
+}
+
+.badges {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 14px
+}
+
+.spark {
+    --g: linear-gradient(90deg, #8b5cf6, #22d3ee, #f59e0b);
+    border: 1px solid var(--border);
+    padding: 8px 12px;
+    border-radius: 999px;
+    position: relative;
+    overflow: hidden
+}
+
+.spark::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    background: conic-gradient(from var(--a, 0deg), transparent 0 90deg, color-mix(in oklab, var(--fg) 25%, transparent) 90deg 100%);
+    mask: radial-gradient(circle at var(--x, 50%) var(--y, 50%), black 0 35%, transparent 40%);
+    opacity: .5;
+    pointer-events: none
+}
+
+.spark__label {
+    background: var(--chip);
+    border-radius: 999px;
+    padding: 6px 10px;
+    display: inline-block
+}
+
+.list {
+    margin: 8px 0 0 18px
+}
+
+/* Ritmo vertical: separa todas las secciones del <main> */
+main.container > * + * {
+  margin-top: 28px;
+}
+
+/* La sección de Habilidades / Cómo trabajo: misma altura y separada de lo de abajo */
+.two-cols {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
+  margin-bottom: 75px;      /* 🔹 separa de “Contacto” */
+}
+.two-cols .card { height: 100%; }
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.skills .chip {
+  flex: 1 1 auto;
+  min-width: 110px;   /* sube un poco el mínimo */
+  text-align: center;
+}

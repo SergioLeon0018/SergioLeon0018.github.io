@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio — Tu Nombre</title>
+  <meta name="description" content="Portfolio de desarrollador — proyectos y contacto" />
+  <!-- 🎨 CSS externo -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="dark">
+  <header>
+    <div class="container row">
+      <div class="brand">
+        <div class="avatar" id="initials">A</div>
+        <div>
+          <h1 id="devName">Tu Nombre <span class="wave" aria-hidden>👋</span></h1>
+          <div class="sub" id="devSub">Desarrollador Web / Mobile · Madrid</div>
+        </div>
+      </div>
+      <div class="actions-header">
+        
+        <button id="themeToggle" class="btn" aria-label="Cambiar tema">🌗</button>
+        <a id="cvLink" href="#" class="btn primary">Descargar CV</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" style="padding-top:24px">
+    <!-- HERO -->
+    <section class="grid" aria-labelledby="heroTitle">
+      <div class="card p">
+        <p class="sub" id="hello">Hola, soy</p>
+        <h2 id="heroTitle" class="title-xl"></h2>
+        <p id="role" class="muted text-lg"></p>
+        <p id="summary" style="margin-top:10px"></p>
+        <div class="cta-row">
+          <a id="ghLink" class="btn" href="#" target="_blank" rel="noreferrer">GitHub</a>
+          <a id="emailLink" class="btn" href="#">Escríbeme</a>
+          <a id="phoneLink" class="btn ghost" href="#">Llamar</a>
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section style="margin-top:28px" aria-labelledby="projectsTitle">
+      <div class="row section-head">
+        <h2 id="projectsTitle" class="title">Proyectos</h2>
+        <div class="tools">
+          <label class="input" aria-label="Buscar proyectos">
+            <input id="search" placeholder="Buscar " />
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          </label>
+          <div id="tagBar" class="tags" role="tablist" aria-label="Filtro por etiquetas"></div>
+        </div>
+      </div>
+
+      <div class="project-grid" id="projects"></div>
+    </section>
+
+    <!-- TECH SHOWCASE (algo chulo y moderno) -->
+    <section class="grid" style="margin-top:28px">
+      
+      
+    </section>
+
+    <!-- SKILLS & WORKFLOW -->
+<section class="two-cols" style="margin-top:28px">
+  <div class="card p">
+    <h3>Habilidades</h3>
+    <div id="skills" class="skills"></div>
+  </div>
+  <div class="card p">
+    <h3>Cómo trabajo</h3>
+    <ul id="workflow" class="list"></ul>
+  </div>
+</section>
+
+
+    <!-- CONTACT -->
+    <section style="margin-top:28px">
+      <div class="card p">
+        <h3>Contacto</h3>
+        <p class="muted">¿Te encaja lo que has visto? Hablemos. Respondo en menos de 24h.</p>
+        <div class="cta-row">
+          <a id="contactEmail" class="btn primary" href="#">Email</a>
+          <a id="contactGit" class="btn" href="#" target="_blank" rel="noreferrer">GitHub</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div id="copyright">© 2025 Tu Nombre. Hecho con HTML + CSS + JS.</div>
+    </footer>
+  </main>
+
+  <!-- 🧠 JS externo -->
+  <script src="app.js" defer></script>
+
+
+</body>
+</html>
